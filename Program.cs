@@ -38,22 +38,22 @@ List<Student> lstStudent = new List<Student>
     },
 };
 
-Examples exemplos = new();
+Examples exemples = new();
 Type newType;
 
-var resDirect = exemplos.Expression_Direct(lstStudent);
+var resDirect = exemples.Expression_Direct(lstStudent);
 
-var resDirectOneFieldCustom = exemplos.Expression_DirectOneFieldCustom(lstStudent);
+var resDirectOneFieldCustom = exemples.Expression_DirectOneFieldCustom(lstStudent);
 
-var resHolder = exemplos.Expression_SelectFieldDirect(lstStudent);
+var resHolder = exemples.Expression_SelectFieldDirect(lstStudent);
 
-var resCustomType = exemplos.Expression_SelectFieldCustomFields<Student>(out newType, "StudentId", "Age", "StudentName");
+var resCustomType = exemples.Expression_SelectFieldCustomFields<Student>(out newType, "StudentId", "Age", "StudentName");
 
-var ExpressionCustomTypeAllFields = exemplos.Expression_SelectFieldCustomFields<Student>(out newType);
+var ExpressionCustomTypeAllFields = exemples.Expression_SelectFieldCustomFields<Student>(out newType);
 
 var resCustomTypeAllFields = lstStudent.Select(ExpressionCustomTypeAllFields).ToList();
 
-var ExpressionCustomTypeCountry = exemplos.Expression_SelectFieldCustomFields<Student>(out newType, "Country");
+var ExpressionCustomTypeCountry = exemples.Expression_SelectFieldCustomFields<Student>(out newType, "Country");
 
 var resCustomTypeCountry = lstStudent.Select(ExpressionCustomTypeCountry).ToList();
 
